@@ -96,8 +96,9 @@ const validarInputs = inputs => {
 }
 
 // const cardPropiedades = document.querySelector(".propiedades"); // forma más elaborada para mostrar function en HTML
-    let template = "";
-    for (let propiedad of propiedadesJSON ){
+    function obtenerTemplete (propiedades) {
+        let template = "";
+    for (let propiedad of propiedades ){
         template +=
                 `<div class="propiedad">
                     <div class="img"
@@ -114,7 +115,8 @@ const validarInputs = inputs => {
                     </section>
                 </div>`
     }
-    document.querySelector(".propiedades").innerHTML=template; // forma más simplificada de mostrar function en HTML
+    return template;
+    }
 // cardPropiedades.innerHTML += template;
 
 
@@ -123,10 +125,11 @@ const validarInputs = inputs => {
 function mostrarPropiedades(propiedades, contenedor){
     let html = "";
 
-    for(const propiedad of propiedades){
-        html += templatePropiedad(propiedad);
-    }
-    contenedor. innerHTML = html;
+    html = obtenerTemplete(propiedades);
+    // for(const propiedad of propiedades){
+    //     html += templatePropiedad(propiedad);
+    // }
+    contenedor.innerHTML = html;
 }
 
 //Filtrar las propiedades según los filtros entradados en los inputs

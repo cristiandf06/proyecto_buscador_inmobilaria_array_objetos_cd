@@ -87,6 +87,12 @@ function mostrarTotalPropiedades(propiedades) {
     let totalPropiedades = propiedades.length;
 
     totalSpan.innerHTML = totalPropiedades;
+    //Permite agregar mensaje si la busqueda fue fallida.
+    if(totalPropiedades > 0){
+        document.getElementById("notFound").hidden = true;
+    }else{
+        document.getElementById("notFound").hidden = false;
+    }
 }
 
 const validarInputs = inputs => {
